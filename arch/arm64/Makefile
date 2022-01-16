@@ -46,6 +46,10 @@ ifeq ($(CONFIG_BROKEN_GAS_INST),y)
 $(warning Detected assembler with broken .inst; disassembly will be unreliable)
 endif
 
+ifeq ($(CONFIG_ARCH_LAHAINA), y)
+KBUILD_CFLAGS  += -mcpu=cortex-a55
+endif
+
 KBUILD_CFLAGS	+= -mgeneral-regs-only	\
 		   $(compat_vdso) $(cc_has_k_constraint)
 KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
