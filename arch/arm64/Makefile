@@ -47,7 +47,7 @@ $(warning Detected assembler with broken .inst; disassembly will be unreliable)
 endif
 
 ifeq ($(CONFIG_ARCH_LAHAINA), y)
-KBUILD_CFLAGS  += -mcpu=cortex-a55
+KBUILD_CFLAGS  += -march=armv8.2-a -mcpu=cortex-a78 -mtune=cortex-a78
 endif
 
 KBUILD_CFLAGS	+= -mgeneral-regs-only	\
